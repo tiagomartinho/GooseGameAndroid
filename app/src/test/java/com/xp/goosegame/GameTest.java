@@ -11,10 +11,12 @@ import static junit.framework.Assert.assertEquals;
 public class GameTest {
 
     private Game game;
+    private Player player;
 
     @Before
     public void setUp() throws Exception {
         game = new Game();
+        player = new Player("Pippo");
     }
 
     @Test
@@ -28,8 +30,17 @@ public class GameTest {
     public void
     when_adding_the_first_player_the_number_of_players_increases() throws Exception {
 
-        game.add(new Player("Pippo"));
+        game.add(player);
 
         assertEquals(1, game.numberOfPlayers());
+    }
+
+    @Test
+    public void
+    when_adding_the_first_player_the_first_player_returned_is_the_same() throws Exception {
+
+        game.add(player);
+
+        assertEquals(player, game.players().get(0));
     }
 }

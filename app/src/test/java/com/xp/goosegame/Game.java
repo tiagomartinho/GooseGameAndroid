@@ -18,4 +18,8 @@ class Game {
     public void add(Player player) {
         players.add(player);
     }
+
+    public List<Player> players() {
+        return players;
+    }
 }
