@@ -22,4 +22,8 @@ class Player {
     public int hashCode() {
         return name != null ? name.hashCode() : 0;
     }
+
+    public String getName() {
+        return name;
+    }
 }
