@@ -14,7 +14,7 @@ public class ParserTest {
     add_player_command() throws Exception {
         String input = "aggiungi giocatore Pippo";
         Player expectedPlayer = new Player("Pippo");
-        InputParser parser = new InputParser();
+        Parser parser = new Parser();
 
         Player player = parser.parse(input);
 
