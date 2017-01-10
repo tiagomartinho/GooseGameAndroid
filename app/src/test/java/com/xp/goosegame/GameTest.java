@@ -15,16 +15,22 @@ public class GameTest {
     @Test
     public void
     when_the_game_starts_it_has_no_players() throws Exception {
+        
         Game game = new Game();
 
-        assertEquals(0, game.players.size());
+        assertEquals(0, game.numberOfPlayers());
     }
 
     private class Game {
-        public List<Player> players;
+
+        private List<Player> players;
 
         public Game() {
             this.players = new ArrayList<>();
+        }
+
+        public int numberOfPlayers() {
+            return players.size();
         }
     }
 
