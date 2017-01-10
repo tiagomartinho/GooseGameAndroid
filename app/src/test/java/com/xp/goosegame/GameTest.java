@@ -19,7 +19,7 @@ public class GameTest {
 
     @Test
     public void
-    when_adding_a_player_the_game_returns_the_list_of_players() throws Exception {
+    when_adding_the_first_player_the_number_of_players_increases() throws Exception {
         Game game = new Game();
 
         game.add(new Player("Pippo"));
