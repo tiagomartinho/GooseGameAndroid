@@ -3,10 +3,14 @@ package com.xp.goosegame;
 
 public class Main {
     public static void main(String [] args) {
-        String input = "aggiungi giocatore Pippo";
-        Parser parser = new Parser();
-        Player player = parser.parse(input);
+
         Game game = new Game();
-        game.add(player);
+        Parser parser = new Parser();
+        GameEngine engine = new GameEngine(game, parser);
+
+        //LOOP
+        String input = "aggiungi giocatore Pippo";
+        engine.action(input);
+        engine.getState();
     }
 }

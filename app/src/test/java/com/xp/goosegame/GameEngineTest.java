@@ -24,27 +24,20 @@ public class GameEngineTest {
         assertEquals(expectedOutput, engine.getState());
     }
 
-    private class GameEngine {
+//    @Test
+    public void
+    moves_a_player() throws Exception {
+        String addPlayerInput = "aggiungi giocatore Pippo";
+        String movePlayerInput = "muovi Pippo 4,2";
+        String expectedOutput = "Pippodskjfgskjh";
+        Game game = new Game();
+        Parser parser = new Parser();
+        GameEngine engine = new GameEngine(game, parser);
 
-        private final Game game;
-        private final Parser parser;
+        engine.action(addPlayerInput);
+        engine.action(movePlayerInput);
 
-        public GameEngine(Game game, Parser parser) {
-            this.game = game;
-            this.parser = parser;
-        }
-
-        public void action(String input) {
-            game.add(parser.parse(input));
-        }
-
-        public String getState() {
-            String state = "Giocatori: ";
-            for (Player player:game.players()) {
-                state += player.getName();
-            }
-            return state;
-        }
+        assertEquals(expectedOutput, engine.getState());
     }
 }
 
